@@ -24,10 +24,5 @@ pipeline {
                 powershell 'Start-IISSite -Name "TestSite"'
             }
         }
-        stage('Test') {
-            steps {
-                powershell 'Start-IISSite -Name "TestSite"'
-            }
-        }
     }
 }
