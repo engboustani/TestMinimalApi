@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                powershell 'Remove-IISSite -Name "TestSite"'
+                powershell 'Remove-IISSite -Name "TestSite" -Confirm:$False'
                 powershell 'New-IISSite -Name "TestSite" -BindingInformation "*:8888:" -PhysicalPath "$env:systemdrive\\inetpub\\testsite"'
             }
         }
