@@ -9,9 +9,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                powershell 'mkdir "$env:systemdrive\inetpub\testsite"'
-                powershell 'dotnet build -o "$env:systemdrive\inetpub\testsite"'
-                powershell 'New-IISSite -Name "TestSite" -BindingInformation "*:8888:" -PhysicalPath "$env:systemdrive\inetpub\testsite"'
+                powershell 'mkdir "$env:systemdrive\\inetpub\\testsite"'
+                powershell 'dotnet build -o "$env:systemdrive\\inetpub\\testsite"'
+                powershell 'New-IISSite -Name "TestSite" -BindingInformation "*:8888:" -PhysicalPath "$env:systemdrive\\inetpub\\testsite"'
             }
         }
     }
